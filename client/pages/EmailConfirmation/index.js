@@ -42,7 +42,8 @@ export class EmailConfirmationPage extends Component {
     } = this.props
 
     dispatch(postEmailConfirm({ token }))
-      .then(() => {
+      .then(response => {
+        localStorage.setItem('auth', JSON.stringify(response.payload.data.data))
         history.push('/')
 
         dispatch(flashMessage('Email confirmed.'))
