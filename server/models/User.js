@@ -1,8 +1,8 @@
 import config from '@config'
 import Bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import Mail from '@server/mails'
 import { Model } from 'objection'
+import Mail from '@fullstackjs/mail'
 import randomstring from 'randomstring'
 
 class User extends Model {
@@ -76,10 +76,9 @@ class User extends Model {
    * @return {Promise}
    */
   async sendForgotPasswordEmail(token) {
-    await new Mail()
+    await new Mail('forgot-password')
       .to(this.email)
       .subject('You requested for a password reset.')
-      .template('forgot-password')
       .data({
         name: this.name,
         url: `${config.url}/auth/passwords/reset/${token}`
@@ -93,10 +92,9 @@ class User extends Model {
    * @return {Promise}
    */
   async sendEmailVerificationEmail() {
-    await new Mail()
+    await new Mail('confirm-email')
       .to(this.email)
       .subject('Please confirm your email address.')
-      .template('confirm-email')
       .data({
         name: this.name,
         url: `${config.url}/auth/emails/confirm/${this.emailConfirmCode}`

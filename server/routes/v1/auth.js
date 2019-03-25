@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import authController from '@controllers/auth.controller'
+import authController from '@controllers/v1/auth.controller'
 
 import authMiddleware from '@middleware/auth'
 
