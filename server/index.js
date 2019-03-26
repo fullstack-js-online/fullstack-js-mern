@@ -24,30 +24,30 @@ Model.knex(knex)
 const app = new Express()
 
 if (!config.production) {
-  const compiler = Webpack(webpackConfig)
+    const compiler = Webpack(webpackConfig)
 
-  app.use(
-    WebpackDevMiddleware(compiler, {
-      hot: true,
-      publicPath: webpackConfig.output.publicPath
-    })
-  )
+    app.use(
+        WebpackDevMiddleware(compiler, {
+            hot: true,
+            publicPath: webpackConfig.output.publicPath
+        })
+    )
 
-  app.use(WebpackHotMiddleware(compiler))
+    app.use(WebpackHotMiddleware(compiler))
 }
 
 app.use(Express.static(path.resolve(__dirname, 'public')))
 
 app.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
+    bodyParser.urlencoded({
+        extended: true
+    })
 )
 
 app.use(bodyParser.json())
 
 app.get('*', (req, res) =>
-  res.sendFile(path.resolve(__dirname, 'public/index.html'))
+    res.sendFile(path.resolve(__dirname, 'public/index.html'))
 )
 
 app.use('/api/v1', v1Router)
@@ -55,9 +55,9 @@ app.use('/api/v1', v1Router)
 const server = Http.createServer(app)
 
 server.listen(config.port, () => {
-  console.log(
-    Chalk.blue(`💚   Project running on http://localhost:${config.port}`)
-  )
+    console.log(
+        Chalk.blue(`💚   Project running on http://localhost:${config.port}`)
+    )
 })
 
 export default server

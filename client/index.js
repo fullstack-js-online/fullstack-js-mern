@@ -11,12 +11,12 @@ import Main from '@client/pages/Main'
 const app = document.getElementById('app')
 
 const render = () => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <Main />
-    </Provider>,
-    app
-  )
+    ReactDOM.render(
+        <Provider store={store}>
+            <Main />
+        </Provider>,
+        app
+    )
 }
 
 if (app) render()

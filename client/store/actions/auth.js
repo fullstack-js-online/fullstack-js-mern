@@ -17,14 +17,14 @@ export const POST_EMAIL_CONFIRM_SUCCESS = 'POST_EMAIL_CONFIRM_SUCCESS'
  * @return {Object} redux action
  */
 export const postRegister = data => ({
-  type: POST_REGISTER,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/register',
-      data
+    type: POST_REGISTER,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/register',
+            data
+        }
     }
-  }
 })
 
 /**
@@ -34,14 +34,14 @@ export const postRegister = data => ({
  * @return {Object} Redux action
  */
 export const postLogin = data => ({
-  type: POST_LOGIN,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/login',
-      data
+    type: POST_LOGIN,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/login',
+            data
+        }
     }
-  }
 })
 
 /**
@@ -51,14 +51,14 @@ export const postLogin = data => ({
  * @return {Object} redux action object
  */
 export const postForgotPassword = data => ({
-  type: POST_FORGOT_PASSWORD,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/passwords/email',
-      data
+    type: POST_FORGOT_PASSWORD,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/passwords/email',
+            data
+        }
     }
-  }
 })
 
 /**
@@ -68,14 +68,14 @@ export const postForgotPassword = data => ({
  * @return {Object} redux action object
  */
 export const postResetPassword = data => ({
-  type: POST_RESET_PASSWORD,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/passwords/reset',
-      data
+    type: POST_RESET_PASSWORD,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/passwords/reset',
+            data
+        }
     }
-  }
 })
 
 /**
@@ -85,14 +85,14 @@ export const postResetPassword = data => ({
  * @return {Object} redux action object
  */
 export const postEmailConfirm = data => ({
-  type: POST_EMAIL_CONFIRM,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/emails/confirm',
-      data
+    type: POST_EMAIL_CONFIRM,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/emails/confirm',
+            data
+        }
     }
-  }
 })
 
 /**
@@ -102,13 +102,13 @@ export const postEmailConfirm = data => ({
  * @return {Object} redux action object
  */
 export const postResendEmailConfirm = () => ({
-  type: POST_RESEND_EMAIL_CONFIRM,
-  payload: {
-    request: {
-      method: 'POST',
-      url: 'auth/emails/confirm/resend'
+    type: POST_RESEND_EMAIL_CONFIRM,
+    payload: {
+        request: {
+            method: 'POST',
+            url: 'auth/emails/confirm/resend'
+        }
     }
-  }
 })
 
 /**
@@ -118,6 +118,6 @@ export const postResendEmailConfirm = () => ({
  * @return {Object} action sent to redux store
  */
 export const authLogout = data => ({
-  type: AUTH_LOGOUT,
-  payload: data
+    type: AUTH_LOGOUT,
+    payload: data
 })
