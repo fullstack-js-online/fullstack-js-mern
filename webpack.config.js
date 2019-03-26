@@ -49,10 +49,13 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new PurgecssPlugin({
-      paths: glob.sync([
-        path.join(__dirname, 'client/**/*.js'),
-        path.join(__dirname, 'client/**/*.css')
-      ]),
+      paths: glob.sync(
+        [
+          path.join(__dirname, 'client/**/*.js'),
+          path.join(__dirname, 'client/**/*.css')
+        ],
+        { nodir: true }
+      ),
       extractors: [
         {
           extractor: TailwindExtractor,
